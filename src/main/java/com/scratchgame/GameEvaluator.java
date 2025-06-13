@@ -1,9 +1,8 @@
-package com.scratchgame;// File: GameEvaluator.java
-
+package com.scratchgame;
 import java.util.*;
 
 public class GameEvaluator {
-    private GameConfig config;
+    private final GameConfig config;
 
     public GameEvaluator(GameConfig config) {
         this.config = config;
@@ -50,7 +49,7 @@ public class GameEvaluator {
         // Apply bonus if any
         String appliedBonus = null;
         if (totalReward > 0) {
-            appliedBonus = applyBonus(matrix, totalReward);
+            appliedBonus = applyBonus(matrix);
             if (appliedBonus != null) {
                 Symbol bonusSymbol = config.symbols.get(appliedBonus);
                 if (bonusSymbol instanceof BonusSymbol bonus) {
@@ -65,7 +64,7 @@ public class GameEvaluator {
         return new GameResult(matrix, totalReward, appliedWinningCombinations, appliedBonus);
     }
 
-    private String applyBonus(String[][] matrix, double rewardBeforeBonus) {
+    private String applyBonus(String[][] matrix) {
         for (String[] row : matrix) {
             for (String cell : row) {
                 Symbol symbol = config.symbols.get(cell);

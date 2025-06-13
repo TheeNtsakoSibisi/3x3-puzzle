@@ -1,5 +1,4 @@
-package com.scratchgame;// File: Symbol.java
-
+package com.scratchgame;
 public abstract class Symbol {
     public String name;
 

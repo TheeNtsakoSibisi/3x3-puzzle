@@ -1,5 +1,4 @@
-package com.scratchgame;// File: GameResult.java
-
+package com.scratchgame;
 import java.util.Map;
 
 public class GameResult {

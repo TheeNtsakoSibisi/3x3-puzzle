@@ -1,10 +1,9 @@
-package com.scratchgame;// File: GameMatrixGenerator.java
-
+package com.scratchgame;
 import java.util.*;
 
 public class GameMatrixGenerator {
-    private GameConfig config;
-    private Random random = new Random();
+    private final GameConfig config;
+    private final Random random = new Random();
 
     public GameMatrixGenerator(GameConfig config) {
         this.config = config;

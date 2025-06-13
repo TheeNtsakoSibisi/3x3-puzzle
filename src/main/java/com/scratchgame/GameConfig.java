@@ -1,9 +1,8 @@
-package com.scratchgame;// File: GameConfig.java
+package com.scratchgame;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.*;
-import com.scratchgame.*;
 
 public class GameConfig {
     public int rows;
@@ -44,24 +43,18 @@ public class GameConfig {
             int row = probNode.get("row").asInt();
 
             Map<String, Integer> probs = new HashMap<>();
-            probNode.get("symbols").fields().forEachRemaining(e -> {
-                probs.put(e.getKey(), e.getValue().asInt());
-            });
+            probNode.get("symbols").fields().forEachRemaining(e -> probs.put(e.getKey(), e.getValue().asInt()));
 
             config.standardProbabilities.add(new ProbabilityEntry(row, col, probs));
         }
 
         // Parse bonus probabilities
         JsonNode bonusNode = json.get("probabilities").get("bonus_symbols").get("symbols");
-        bonusNode.fields().forEachRemaining(e -> {
-            config.bonusProbabilities.put(e.getKey(), e.getValue().asInt());
-        });
+        bonusNode.fields().forEachRemaining(e -> config.bonusProbabilities.put(e.getKey(), e.getValue().asInt()));
 
         // Parse win combinations
         JsonNode winCombNode = json.get("win_combinations");
-        winCombNode.fields().forEachRemaining(e -> {
-            config.winCombinations.put(e.getKey(), WinCombination.fromJson(e.getValue()));
-        });
+        winCombNode.fields().forEachRemaining(e -> config.winCombinations.put(e.getKey(), WinCombination.fromJson(e.getValue())));
 
         return config;
     }

@@ -1,5 +1,4 @@
-package com.scratchgame;// File: ProbabilityEntry.java
-
+package com.scratchgame;
 import java.util.Map;
 
 public class ProbabilityEntry {

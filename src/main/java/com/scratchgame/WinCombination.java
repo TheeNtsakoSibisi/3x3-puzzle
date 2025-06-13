@@ -1,5 +1,4 @@
-package com.scratchgame;// File: WinCombination.java
-
+package com.scratchgame;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.*;
 

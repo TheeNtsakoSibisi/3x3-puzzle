@@ -1,5 +1,4 @@
-package com.scratchgame;// File: ScratchGame.java
-
+package com.scratchgame;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 
