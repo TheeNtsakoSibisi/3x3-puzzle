@@ -1,0 +1,10 @@
+com/scratchgame/BonusSymbol.class
+com/scratchgame/GameEvaluator.class
+com/scratchgame/GameConfig.class
+com/scratchgame/ScratchGame.class
+com/scratchgame/StandardSymbol.class
+com/scratchgame/ProbabilityEntry.class
+com/scratchgame/GameResult.class
+com/scratchgame/GameMatrixGenerator.class
+com/scratchgame/WinCombination.class
+com/scratchgame/Symbol.class
